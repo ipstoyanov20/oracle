@@ -51,21 +51,21 @@ namespace StartProgram
 
             //    Console.WriteLine(item);
             //}
-            int[][] ms1 = new int[][]
-            {
-                new int[] { 8, 1, 6 },
-                new int[] { 3, 5, 7 },
-                new int[] { 4, 9, 2 }
-            };
-            int[][] ms2 = new int[][]
-            {
-                new int[] { 2, 7, 6 },
-                new int[] { 9, 5, 1 },
-                new int[] { 4, 3, 8 }
-            };
-            
-            var res = new T15istoyanov();
-            Console.WriteLine("result: " + res.Value(ms1, ms2));
+            // int[][] ms1 = new int[][]
+            // {
+            //     new int[] { 8, 1, 6 },
+            //     new int[] { 3, 5, 7 },
+            //     new int[] { 4, 9, 2 }
+            // };
+            // int[][] ms2 = new int[][]
+            // {
+            //     new int[] { 2, 7, 6 },
+            //     new int[] { 9, 5, 1 },
+            //     new int[] { 4, 3, 8 }
+            // };
+            //
+            // var res = new T15istoyanov();
+            // Console.WriteLine("result: " + res.Value(ms1, ms2));
 
             //
             // int[][] magicSquare = new int[][]
@@ -96,9 +96,9 @@ namespace StartProgram
 
             int[][] puzzle = new int[][]
             {
-                new int[] { 0, 28, 0 },
-                new int[] { 36, 0, 4 },
-                new int[] { 0, 12, 32 }
+                new int[] { 0, 0, 0 },
+                new int[] { 0, 7, 0 },
+                new int[] { 0, 0, 0 }
             };
 
             Console.WriteLine("Input:");

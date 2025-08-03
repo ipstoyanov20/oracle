@@ -8,27 +8,44 @@ namespace TL.Student.Implementations;
 public class T17istoyanov : IT17
 {
     private int n;
-    private int[][] sq;
-    private List<(int r, int c)> empties;
-    private HashSet<int> used;
+    private int[][] cloneOfMS;
+    private List<(int r, int c)> empties = new List<(int, int)>();
+    
+    //използвам HashSet, защото е по-бърз при проверка за съдържание
+    private HashSet<int> used = new HashSet<int>();
     private int targetSum;
+    
+    
+    private static void IsValidMatrix(int[][] matrix)
+    {
+        if (matrix == null)
+            throw new ArgumentNullException("Matrix cannot be null");
+        if (matrix.Length == 0 || matrix.Any(row => row == null || row.Length != matrix.Length))
+            throw new ArgumentException("Matrix must be non-empty and cloneOfMS");
 
-    public int[][] Solve(int[][] ms)
+        var ms1Elements = matrix.SelectMany(row => row).ToList();
+
+        if (ms1Elements.Count != ms1Elements.Distinct().Count())
+            throw new ArgumentException("Matrix ms1 contains duplicate elements. Not a valid magic cloneOfMS.");
+        
+        
+    }
+    
+    public int[][] Solve(int[][] ms)    
     {
         n = ms.Length;
-        sq = ms.Select(r => (int[])r.Clone()).ToArray();
+        cloneOfMS = ms;
 
 
-        empties = new List<(int, int)>();
-        used = new HashSet<int>();
+        
         for (int i = 0; i < n; i++)
         {
             for (int j = 0; j < n; j++)
             {
-                if (sq[i][j] == 0)
+                if (cloneOfMS[i][j] == 0)
                     empties.Add((i, j));
                 else
-                    used.Add(sq[i][j]);
+                    used.Add(cloneOfMS[i][j]);
             }
         }
 
@@ -38,17 +55,19 @@ public class T17istoyanov : IT17
             targetSum = sum;
             
             foreach (var (r, c) in empties)
-                sq[r][c] = 0;
+                cloneOfMS[r][c] = 0;
 
 
-            if (Backtrack(0))
-                return sq;
+            if (TryWith(0))
+            {
+                return cloneOfMS;
+            }   
         }
 
         throw new Exception("No solution found.");
     }
 
-    private bool Backtrack(int idx)
+    private bool TryWith(int idx)
     {
         if (idx == empties.Count)
             return IsMagic();
@@ -60,24 +79,24 @@ public class T17istoyanov : IT17
         {
             if (used.Contains(val)) continue;
 
-            sq[r][c] = val;
+            cloneOfMS[r][c] = val;
             used.Add(val);
 
 
-            if (IsPartialValid(r, c) && Backtrack(idx + 1))
+            if (IsCurrentlyValidOnAllDirections(r, c) && TryWith(idx + 1))
                 return true;
 
-
+            //премахва стойността
             used.Remove(val);
-            sq[r][c] = 0;
+            cloneOfMS[r][c] = 0;
         }
 
         return false;
     }
 
-    private bool IsPartialValid(int row, int col)
+    private bool IsCurrentlyValidOnAllDirections(int row, int col)
     {
-        if (sq[row].All(x => x != 0) && sq[row].Sum() != targetSum)
+        if (cloneOfMS[row].All(x => x != 0) && cloneOfMS[row].Sum() != targetSum)
             return false;
 
 
@@ -85,8 +104,8 @@ public class T17istoyanov : IT17
         bool colFull = true;
         for (int i = 0; i < n; i++)
         {
-            if (sq[i][col] == 0) colFull = false;
-            colSum += sq[i][col];
+            if (cloneOfMS[i][col] == 0) colFull = false;
+            colSum += cloneOfMS[i][col];
         }
 
         if (colFull && colSum != targetSum)
@@ -99,8 +118,8 @@ public class T17istoyanov : IT17
             bool full1 = true;
             for (int i = 0; i < n; i++)
             {
-                if (sq[i][i] == 0) full1 = false;
-                d1 += sq[i][i];
+                if (cloneOfMS[i][i] == 0) full1 = false;
+                d1 += cloneOfMS[i][i];
             }
 
             if (full1 && d1 != targetSum)
@@ -114,8 +133,8 @@ public class T17istoyanov : IT17
             bool full2 = true;
             for (int i = 0; i < n; i++)
             {
-                if (sq[i][n - 1 - i] == 0) full2 = false;
-                d2 += sq[i][n - 1 - i];
+                if (cloneOfMS[i][n - 1 - i] == 0) full2 = false;
+                d2 += cloneOfMS[i][n - 1 - i];
             }
 
             if (full2 && d2 != targetSum)
@@ -127,9 +146,9 @@ public class T17istoyanov : IT17
 
     public bool IsMagic()
     {
-        IsValidMatrix(sq);
+        IsValidMatrix(cloneOfMS);
 
-        int size = sq.Length;
+        int size = cloneOfMS.Length;
 
         List<int> rowSumsMs1 = Enumerable.Repeat(0, size).ToList();
         List<int> colSumsMs1 = Enumerable.Repeat(0, size).ToList();
@@ -141,15 +160,15 @@ public class T17istoyanov : IT17
         {
             for (int col = 0; col < size; col++)
             {
-                rowSumsMs1[row] += sq[row][col];
-                colSumsMs1[col] += sq[row][col];
+                rowSumsMs1[row] += cloneOfMS[row][col];
+                colSumsMs1[col] += cloneOfMS[row][col];
             }
         }
 
         for (int i = 0; i < size; i++)
         {
-            diagSumMs1 += sq[i][i];
-            antiDiagSumMs1 += sq[i][size - 1 - i];
+            diagSumMs1 += cloneOfMS[i][i];
+            antiDiagSumMs1 += cloneOfMS[i][size - 1 - i];
         }
 
         bool isMs1Magic = rowSumsMs1.All(s => s == rowSumsMs1[0]) &&
@@ -160,16 +179,5 @@ public class T17istoyanov : IT17
         return isMs1Magic;
     }
 
-    private static void IsValidMatrix(int[][] matrix)
-    {
-        if (matrix == null)
-            throw new ArgumentNullException("Matrix cannot be null");
-        if (matrix.Length == 0 || matrix.Any(row => row == null || row.Length != matrix.Length))
-            throw new ArgumentException("Matrix must be non-empty and square");
-
-        var ms1Elements = matrix.SelectMany(row => row).ToList();
-
-        if (ms1Elements.Count != ms1Elements.Distinct().Count())
-            throw new ArgumentException("Matrix ms1 contains duplicate elements. Not a valid magic square.");
-    }
+   
 }

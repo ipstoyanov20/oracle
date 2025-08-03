@@ -14,9 +14,9 @@ namespace Implementations.Test
         [Fact]
         public void Randomize_ReturnsSquareMatrix_WithSameDimensions()
         {
-            var sut = new T16istoyanov();
+            var ince = new T16istoyanov();
 
-            int[][] randomized = sut.Randomize(originalSquare, seed: 42);
+            int[][] randomized = ince.Randomize(originalSquare, seed: 42);
 
             Assert.NotNull(randomized);
             Assert.Equal(originalSquare.Length, randomized.Length);
@@ -31,26 +31,18 @@ namespace Implementations.Test
         [Fact]
         public void Randomize_MultipliesAllElementsBySameMultiplier_IgnoringPositions()
         {
-            var sut = new T16istoyanov();
-            int multiplier = 3;
+            var ince = new T16istoyanov();
 
-            int[][] randomized = sut.Randomize(originalSquare, seed: 42);
+            int[][] randomized = ince.Randomize(originalSquare, seed: 42);
+
+            var lastRotated = ince.LastRotatedMatrix;
+            int multiplier = ince.Multiplier;
             
-           
-            Assert.NotNull(randomized);
-            Assert.Equal(originalSquare.Length, randomized.Length);
-            foreach (var row in randomized)
+            for (int i = 0; i < lastRotated.Length; i++)
             {
-                Assert.NotNull(row);
-                Assert.Equal(originalSquare.Length, row.Length);
-            }
-            
-            
-            for (int i = 0; i < originalSquare.Length; i++)
-            {
-                for (int j = 0; j < originalSquare[i].Length; j++)
+                for (int j = 0; j < lastRotated[i].Length; j++)
                 {
-                    Assert.Equal(originalSquare[i][j] * multiplier, randomized[i][j]);
+                    Assert.Equal(lastRotated[i][j] * multiplier, randomized[i][j]);
                 }
             }
         }

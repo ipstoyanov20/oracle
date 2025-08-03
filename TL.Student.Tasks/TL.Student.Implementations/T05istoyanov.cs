@@ -9,9 +9,10 @@ namespace TL.Student.Implementations
 {
     public class T05istoyanov : IT05
     {
+        Dictionary<int, int> numbers;
         public Dictionary<int, int> PrimeFactor(int number)
         {
-            Dictionary<int, int> numbers = new();
+            numbers = new();
 
 
             for (int i = 2; i <= Math.Sqrt(number); i++)

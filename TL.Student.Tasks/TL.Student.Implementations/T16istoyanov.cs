@@ -7,7 +7,11 @@ namespace TL.Student.Implementations
 {
     public class T16istoyanov : IT16
     {
-        private static void IsValidMatrix(int[][] matrix)
+        public int[][] LastRotatedMatrix { get; private set; }
+
+        public int Multiplier { get; set; }
+
+        private void IsValidMatrix(int[][] matrix)
         {
             if (matrix == null)
                 throw new ArgumentNullException( "Matrix cannot be null");
@@ -20,18 +24,18 @@ namespace TL.Student.Implementations
                 throw new ArgumentException("Matrix ms1 contains duplicate elements. Not a valid magic square.");
         }
 
-        private static void ToRotateYAxis(int[][] matrix)
+        private void ToRotateYAxis(int[][] matrix)
         {
             foreach (var row in matrix)
                 Array.Reverse(row);
         }
 
-        private static void ToRotateXAxis(int[][] matrix)
+        private void ToRotateXAxis(int[][] matrix)
         {
             Array.Reverse(matrix);
         }
 
-        private static void ToRotateMainDiagonal(int[][] matrix)
+        private void ToRotateMainDiagonal(int[][] matrix)
         {
             int size = matrix.Length;
             for (int i = 0; i < size; i++)
@@ -44,7 +48,7 @@ namespace TL.Student.Implementations
             }
         }
 
-        private static void ToRotateSecondDiagonal(int[][] matrix)
+        private void ToRotateSecondDiagonal(int[][] matrix)
         {
             int size = matrix.Length;
             for (int i = 0; i < size - 1; i++)
@@ -60,19 +64,19 @@ namespace TL.Student.Implementations
             }
         }
 
-        private static void ToRotate90(int[][] matrix)
+        private void ToRotate90(int[][] matrix)
         {
             ToRotateMainDiagonal(matrix);
             ToRotateYAxis(matrix);
         }
 
-        private static void ToRotate180(int[][] matrix)
+        private void ToRotate180(int[][] matrix)
         {
             ToRotateXAxis(matrix);
             ToRotateYAxis(matrix);
         }
 
-        private static void ToRotate270(int[][] matrix)
+        private void ToRotate270(int[][] matrix)
         {
             ToRotateMainDiagonal(matrix);
             ToRotateXAxis(matrix);
@@ -103,12 +107,18 @@ namespace TL.Student.Implementations
                 int op = rand.Next(rotations.Count);
                 rotations[op](result);
             }
+            LastRotatedMatrix = result.Select(row => row.ToArray()).ToArray();
 
             int multiplier = rand.Next(1, 6);
             for (int row = 0; row < size; row++)
+            {
                 for (int col = 0; col < size; col++)
+                {
                     result[row][col] *= multiplier;
+                }
 
+            }
+            Multiplier = multiplier;
             return result;
         }
     }
