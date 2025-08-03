@@ -1,0 +1,56 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "StartProgram/1.0.0": {
+        "dependencies": {
+          "TL.Student.Implementations": "1.0.0",
+          "TL.Student.Interfaces": "1.0.0"
+        },
+        "runtime": {
+          "StartProgram.dll": {}
+        }
+      },
+      "TL.Student.Implementations/1.0.0": {
+        "dependencies": {
+          "TL.Student.Interfaces": "1.0.0"
+        },
+        "runtime": {
+          "TL.Student.Implementations.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "TL.Student.Interfaces/1.0.0": {
+        "runtime": {
+          "TL.Student.Interfaces.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "StartProgram/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "TL.Student.Implementations/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "TL.Student.Interfaces/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

@@ -1,0 +1,11 @@
+C:\Users\Hello\source\repos\IStoyanov\8_Алгоритмични задачи\TL.Student.Tasks\TL.Student.Interfaces\bin\Debug\net8.0\TL.Student.Interfaces.deps.json
+C:\Users\Hello\source\repos\IStoyanov\8_Алгоритмични задачи\TL.Student.Tasks\TL.Student.Interfaces\bin\Debug\net8.0\TL.Student.Interfaces.dll
+C:\Users\Hello\source\repos\IStoyanov\8_Алгоритмични задачи\TL.Student.Tasks\TL.Student.Interfaces\bin\Debug\net8.0\TL.Student.Interfaces.pdb
+C:\Users\Hello\source\repos\IStoyanov\8_Алгоритмични задачи\TL.Student.Tasks\TL.Student.Interfaces\obj\Debug\net8.0\TL.Student.Interfaces.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Hello\source\repos\IStoyanov\8_Алгоритмични задачи\TL.Student.Tasks\TL.Student.Interfaces\obj\Debug\net8.0\TL.Student.Interfaces.AssemblyInfoInputs.cache
+C:\Users\Hello\source\repos\IStoyanov\8_Алгоритмични задачи\TL.Student.Tasks\TL.Student.Interfaces\obj\Debug\net8.0\TL.Student.Interfaces.AssemblyInfo.cs
+C:\Users\Hello\source\repos\IStoyanov\8_Алгоритмични задачи\TL.Student.Tasks\TL.Student.Interfaces\obj\Debug\net8.0\TL.Student.Interfaces.csproj.CoreCompileInputs.cache
+C:\Users\Hello\source\repos\IStoyanov\8_Алгоритмични задачи\TL.Student.Tasks\TL.Student.Interfaces\obj\Debug\net8.0\TL.Student.Interfaces.dll
+C:\Users\Hello\source\repos\IStoyanov\8_Алгоритмични задачи\TL.Student.Tasks\TL.Student.Interfaces\obj\Debug\net8.0\refint\TL.Student.Interfaces.dll
+C:\Users\Hello\source\repos\IStoyanov\8_Алгоритмични задачи\TL.Student.Tasks\TL.Student.Interfaces\obj\Debug\net8.0\TL.Student.Interfaces.pdb
+C:\Users\Hello\source\repos\IStoyanov\8_Алгоритмични задачи\TL.Student.Tasks\TL.Student.Interfaces\obj\Debug\net8.0\ref\TL.Student.Interfaces.dll

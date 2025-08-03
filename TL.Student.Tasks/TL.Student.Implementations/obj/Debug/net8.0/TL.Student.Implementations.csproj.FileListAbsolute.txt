@@ -1,0 +1,15 @@
+C:\Users\Hello\source\repos\IStoyanov\8_Алгоритмични задачи\TL.Student.Tasks\TL.Student.Implementations\bin\Debug\net8.0\TL.Student.Implementations.deps.json
+C:\Users\Hello\source\repos\IStoyanov\8_Алгоритмични задачи\TL.Student.Tasks\TL.Student.Implementations\bin\Debug\net8.0\TL.Student.Implementations.dll
+C:\Users\Hello\source\repos\IStoyanov\8_Алгоритмични задачи\TL.Student.Tasks\TL.Student.Implementations\bin\Debug\net8.0\TL.Student.Implementations.pdb
+C:\Users\Hello\source\repos\IStoyanov\8_Алгоритмични задачи\TL.Student.Tasks\TL.Student.Implementations\bin\Debug\net8.0\TL.Student.Interfaces.dll
+C:\Users\Hello\source\repos\IStoyanov\8_Алгоритмични задачи\TL.Student.Tasks\TL.Student.Implementations\bin\Debug\net8.0\TL.Student.Interfaces.pdb
+C:\Users\Hello\source\repos\IStoyanov\8_Алгоритмични задачи\TL.Student.Tasks\TL.Student.Implementations\obj\Debug\net8.0\TL.Student.Implementations.csproj.AssemblyReference.cache
+C:\Users\Hello\source\repos\IStoyanov\8_Алгоритмични задачи\TL.Student.Tasks\TL.Student.Implementations\obj\Debug\net8.0\TL.Student.Implementations.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Hello\source\repos\IStoyanov\8_Алгоритмични задачи\TL.Student.Tasks\TL.Student.Implementations\obj\Debug\net8.0\TL.Student.Implementations.AssemblyInfoInputs.cache
+C:\Users\Hello\source\repos\IStoyanov\8_Алгоритмични задачи\TL.Student.Tasks\TL.Student.Implementations\obj\Debug\net8.0\TL.Student.Implementations.AssemblyInfo.cs
+C:\Users\Hello\source\repos\IStoyanov\8_Алгоритмични задачи\TL.Student.Tasks\TL.Student.Implementations\obj\Debug\net8.0\TL.Student.Implementations.csproj.CoreCompileInputs.cache
+C:\Users\Hello\source\repos\IStoyanov\8_Алгоритмични задачи\TL.Student.Tasks\TL.Student.Implementations\obj\Debug\net8.0\TL.Stude.1A5A3D39.Up2Date
+C:\Users\Hello\source\repos\IStoyanov\8_Алгоритмични задачи\TL.Student.Tasks\TL.Student.Implementations\obj\Debug\net8.0\TL.Student.Implementations.dll
+C:\Users\Hello\source\repos\IStoyanov\8_Алгоритмични задачи\TL.Student.Tasks\TL.Student.Implementations\obj\Debug\net8.0\refint\TL.Student.Implementations.dll
+C:\Users\Hello\source\repos\IStoyanov\8_Алгоритмични задачи\TL.Student.Tasks\TL.Student.Implementations\obj\Debug\net8.0\TL.Student.Implementations.pdb
+C:\Users\Hello\source\repos\IStoyanov\8_Алгоритмични задачи\TL.Student.Tasks\TL.Student.Implementations\obj\Debug\net8.0\ref\TL.Student.Implementations.dll
